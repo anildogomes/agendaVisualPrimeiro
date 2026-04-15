@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: blob: https://*.unsplash.com https://picsum.photos https://drive.google.com https://*.flaticon.com https://api.qrserver.com;">
+    
+    <!-- Meta Tags Padrão (Fallback) -->
+    <title>AgendaVisual_Anildo</title>
+    <meta name="description" content="Um sistema de agendamento profissional e elegante para barbearias e estúdios de beleza.">
+    <meta property="og:title" content="AgendaVisual - Agendamento Online">
+    <meta property="og:description" content="Agende seu horário online de forma rápida e fácil.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=1200">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+                serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+                sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            },
+            colors: {
+              gold: {
+                  50: '#FBF8F1',
+                  100: '#F5EED9',
+                  200: '#EBE0BA',
+                  300: '#E0D19A',
+                  400: '#D4AF37',
+                  500: '#C5A059',
+                  600: '#B48E43',
+                  700: '#8F6B28',
+                  800: '#6B501E',
+                  900: '#4A3714',
+              },
+              primary: {
+                '50': '#eff6ff',
+                '100': '#dbeafe',
+                '200': '#bfdbfe',
+                '300': '#93c5fd',
+                '400': '#60a5fa',
+                '500': '#3b82f6',
+                '600': '#2563eb',
+                '700': '#1d4ed8',
+                '800': '#1e40af',
+                '900': '#1e3a8a',
+                '950': '#172554',
+              },
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.81.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 dark:bg-slate-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            console.log('Service Worker registrado com sucesso:', registration);
+          }).catch(registrationError => {
+            console.log('Falha ao registrar Service Worker:', registrationError);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
